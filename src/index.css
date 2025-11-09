@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -115,9 +119,15 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground  font-sans;
   }
+  @theme {
+  --font-sans: "Elms Sans", system-ui, sans-serif;
+  --font-mono: "Roboto Mono", monospace;
 }
+
+}
+
 
 
 /* Your new reusable classes */
@@ -137,7 +147,9 @@
   /* Make sure you have a space between shadow-md and hover: */
   @apply bg-gradient-to-r from-blue-600 to-blue-400 text-white px-5 py-3 rounded-lg shadow-md hover:from-blue-700 hover:to-blue-500 transition-all duration-300;
 }
-
+.btn-gradient-red{
+  @apply bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-pink-600;
+}
 .progress-indicator{
   @apply flex space-x-3 bg-gradient-to-r from-blue-600 to-blue-400 text-white px-5 py-3 rounded-lg shadow-md;
 }

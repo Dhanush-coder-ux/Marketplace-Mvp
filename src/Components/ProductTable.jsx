@@ -36,6 +36,11 @@ const Producttable = ({ items }) => {
     console.log("Editing item:", viewData.product_code);
     setViewOpen(false);
   };
+  const deletedummy = () => {
+    if (!viewData) return;
+    console.log("Editing item:", viewData.product_code);
+    setViewOpen(false);
+  };
 
   return (
     <div className='overflow-x-auto bg-white shadow-md rounded-lg'>
@@ -112,6 +117,10 @@ const Producttable = ({ items }) => {
         onActionClick={handleEditClick}
         cancelText="Close"
         actionClassName={"btn-gradient-blue"}
+        actionTextOther='delete'
+        actionClassNameOther='btn-gradient-red'
+        onActionClickOthere={deletedummy}
+        otherAlters = {true}
       >
         {viewData && (
           <div className="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-2 text-gray-800">

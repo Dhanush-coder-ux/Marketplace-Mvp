@@ -9,6 +9,7 @@ import {
   AlertDialogTitle,
 } from "@/Components/ui/alert-dialog"
 import React from 'react'
+import { string } from "zod"
 
 /**
  * A reusable detail view dialog.
@@ -21,7 +22,11 @@ import React from 'react'
  * @param {function} [props.onActionClick] - Function to call when the action button is clicked.
  * @param {string} [props.cancelText="Cancel"] - Text for the cancel button.
  * @param {string} [props.actionClassName] - Optional class for the action button.
- * @param {string} [props.cancelClassName] - Optional class for the cancel button.
+ * @param {string} [props.cancelClassName]
+ * @param {string} [props.actionTextOther]
+ * @param {function} [props.onActionClickOthere]
+ * @param {string} [props.actionClassNameOther]
+ * @param {boolean}[props.otherAlters]
  */
 const DetailView = ({
   open,
@@ -32,7 +37,11 @@ const DetailView = ({
   onActionClick,
   cancelText = "Cancel",
   actionClassName,
-  cancelClassName
+  cancelClassName,
+  actionClassNameOther,
+  onActionClickOthere,
+  actionTextOther,
+  otherAlters = false
 }) => {
   return (
     <AlertDialog open={open} onOpenChange={onOpenChange}>
@@ -55,6 +64,13 @@ const DetailView = ({
           >
             {actionText}
           </AlertDialogAction>
+          {otherAlters && <AlertDialogAction
+          onClick={onActionClickOthere}
+          className={actionClassNameOther}
+          >
+            {actionTextOther}
+          </AlertDialogAction>
+          }
           <AlertDialogCancel className={cancelClassName}>
             {cancelText}
           </AlertDialogCancel>

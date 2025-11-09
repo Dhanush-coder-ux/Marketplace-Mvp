@@ -4,6 +4,7 @@ import GradientButton from '@/Components/GradientButton'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+
 const InventoryHeader = ({
     onSearchChange, 
     count,
@@ -17,7 +18,6 @@ const InventoryHeader = ({
       
     const [isViewOpen, setViewOpen] = useState(false);
 
-  
     const handleConfirmDelete = () => {
         console.log("Deleting all items...");
        
@@ -84,8 +84,9 @@ const InventoryHeader = ({
 
         <GradientButton
           onClick={() => setViewOpen(true)}
+          className='btn-gradient-red'
         >
-          Delete
+          Delete All
         </GradientButton>
       </div>
 
@@ -95,7 +96,7 @@ const InventoryHeader = ({
         onOpenChange={setViewOpen}
         title='Are you sure you want to delete?'
         actionText='Confirm Delete'
-        actionClassName='bg-red-600 hover:bg-red-700'
+        actionClassName='btn-gradient-red'
         cancelText='Cancel'
         onActionClick={handleConfirmDelete}
       >
