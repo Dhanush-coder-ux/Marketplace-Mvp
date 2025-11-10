@@ -26,7 +26,7 @@ const InventoryHeader = ({
 
         
     return (
-    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
+    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between  gap-4 mb-6">
       
       <div className='flex flex-col md:flex-row gap-4'>
     
@@ -62,7 +62,7 @@ const InventoryHeader = ({
         <input
           type="text"
           placeholder="Search items..."
-          className="w-full pl-10 pr-4 py-3 rounded-lg shadow-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="input"
           value={searchValue}       
           onChange={onSearchChange}   
         />
@@ -77,7 +77,7 @@ const InventoryHeader = ({
       <div className='flex flex-col sm:flex-row gap-4'>
      
         <Link to={'/add-products'}>
-          <GradientButton>
+          <GradientButton className='max-sm:w-full'>
             + Add
           </GradientButton>
         </Link>

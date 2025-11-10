@@ -6,7 +6,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 
 
 
-const InventoryPage = () => {
+const InventoryPage = ({isSidebarOpen}) => {
   
     const [search, setSearch] = useState("");
     const [debouncedSearch, setDebouncedSearch] = useState("");
@@ -46,7 +46,12 @@ const InventoryPage = () => {
     const percentage = totalProducts > 0 ? (filteredCount / totalProducts) * 100 : 0;
     
   return (
-    <div>
+    <div
+  className={`transition-all duration-300 p-6 min-h-screen ${
+    isSidebarOpen ? 'ml-[15%]' : 'ml-0]'
+  }`}
+>
+
       <Title>Inventory</Title>
       <InventoryHeader
        size={80} 

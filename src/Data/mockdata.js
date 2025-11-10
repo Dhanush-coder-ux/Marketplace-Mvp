@@ -71,3 +71,4 @@ export const MOCK_ORDERS = [
   { id: 6, orderId: 7874879, name: 'Customer 6', qty: 5, price: 500, status: 'canceld' },
   { id: 7, orderId: 7874880, name: 'Customer 7', qty: 1, price: 75, status: 'canceld' },
 ];
+

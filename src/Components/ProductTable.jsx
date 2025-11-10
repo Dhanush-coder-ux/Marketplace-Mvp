@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect } from 'react'
 import DetailView from './DetailView';
 
 
-const ITEMS_PER_PAGE = 1;
+const ITEMS_PER_PAGE = 3;
 
 const Producttable = ({ items }) => {
 

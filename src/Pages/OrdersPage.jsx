@@ -7,7 +7,7 @@ import StatusButton from '@/Sections/Status';
 
 
 
-const OrdersPage = () => {
+const OrdersPage = ({isSidebarOpen}) => {
   const [activeTab, setActiveTab] = useState('pending');
   const [isOnline, setIsOnline] = useState(true);
 
@@ -24,7 +24,11 @@ const OrdersPage = () => {
   },[activeTab,MOCK_ORDERS]) 
 
   return (
-    <div className="p-4 md:p-8">
+        <div
+            className={`transition-all duration-300 p-6 min-h-screen ${
+              isSidebarOpen ? 'ml-[15%]' : 'ml-0]'
+            }`}
+          >
         <div className="flex justify-between items-center mb-4">
             <Title showBackIcon={true}>Orders</Title>
           

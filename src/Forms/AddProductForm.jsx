@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Label } from "@/components/ui/label"; 
 import Title from '@/Components/Title';
 
-const AddProductForm = () => {
+const AddProductForm = ({isSidebarOpen}) => {
     const [ formData, setFormData ] = useState({
         product_code: "",
         name: "",
@@ -30,7 +30,11 @@ const AddProductForm = () => {
   
 
     return (
-        <div>
+            <div
+  className={`transition-all duration-300 p-6 min-h-screen ${
+    isSidebarOpen ? 'ml-[15%]' : 'ml-0]'
+  }`}
+>
              <Title>Inventory / Add Product</Title>
             <div className="max-w-2xl mx-auto p-4">
                 <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-lg shadow-md mt-4">
